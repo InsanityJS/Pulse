@@ -52,7 +52,7 @@
 				<button class="button button__main" data-modal="consultation">заказать кОНСУЛЬТАЦИЮ</button>
 				<div class="promo__link">
 					или
-					<a href="#">пЕРЕЙТИ В КАТАЛОГ</a>
+					<a href="#catalog">пЕРЕЙТИ В КАТАЛОГ</a>
 				</div>
 			</div>
 		</div>
@@ -96,11 +96,12 @@
 				Просто заполните форму заявки <br>
 				и мы перезвоним вам в течении 10 минут
 			</div>
-			<form class="feed-form" action="#">
-				<input name="name" required placeholder="Ваше имя" type="text">
-				<input name="phone" required placeholder="Ваш телефон" type="tel">
-				<input name="email" required placeholder="Ваш E-mail" type="email">
-				<button class="button button__consultation" data-modal="consultation">заказать кОНСУЛЬТАЦИЮ</button>
+			<form id="consultation-form" class="feed-form" action="#">
+				<input name="name" placeholder="Ваше имя" type="text">
+				<input name="phone" placeholder="Ваш телефон" type="tel">
+				<input name="email" placeholder="Ваш E-mail" type="email">
+				<button class="button button__consultation">заказать кОНСУЛЬТАЦИЮ</button>
+				<!--data-modal="consultation"-->
 			</form>
 		</div>
 	</div>
@@ -116,7 +117,7 @@
 			<button type="button" class="next"><img src="icons/next.svg"></img></button>
 		</div>
 	</div>
-	<div class="catalog">
+	<div class="catalog" id="catalog">
 		<div class="container">
 			<h2 class="title">Каталог пульсометров</h2>
 			<ul class="catalog__tabs">
@@ -548,6 +549,8 @@
 	</div>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	<script src="js/tiny-slider.js"></script>
+	<script src="js/jquery.validate.min.js"></script>
+	<script src="js/jquery.maskedinput.min.js"></script>
 	<script src="js/script.js"></script>
 </body>
 

@@ -87,13 +87,36 @@ document.querySelector(".prev").onclick = function () {
   $(".modal__close").on("click", function () {
     $(".overlay, #consultation, #order, #thanks").fadeOut("slow");
   });
-  //$(".button_mini").on("click", function () {
-  //  $(".overlay, #order").fadeIn("slow");
-  //});
   $(".button_mini").each(function (i) {
     $(this).on("click", function () {
       $("#order .modal__descr").text($(".catalog-item__subtitle").eq(i).text());
       $(".overlay, #order").fadeIn("slow");
     });
   });
+  function validateForms(form) {
+    $(form).validate({
+      rules: {
+        name: "required",
+        phone: "required",
+        email: {
+          required: true,
+          email: true,
+        },
+      },
+      messages: {
+        name: "Пожалуйста, введите свое имя",
+        phone: "Пожалуйста, введите свой мобильный номер",
+        email: {
+          required: "Пожалуйста, введите свой почтовый ящик",
+          email: "Неверный формат ввода, пример ввода - name@domain.com",
+        },
+      },
+    });
+  }
+
+  validateForms("#order form");
+  validateForms("#consultation form");
+  validateForms("#consultation-form");
+
+  $("input[name=phone]").mask("+3 (999) 999-9999");
 })(jQuery);
