@@ -135,4 +135,20 @@ document.querySelector(".prev").onclick = function () {
     });
     return false;
   });
+  //Скрипт для плавного скрола
+  $("a[href^='#']").click(function () {
+    var _href = $(this).attr("href");
+    $("html, body").animate({ scrollTop: $(_href).offset().top + "px" });
+    return false;
+  });
+  //Скрипт на кнопку которая ведет вверх, она появляется при прокрутке на 800 пикселей вниз
+  $(window).scroll(function () {
+    if ($(this).scrollTop() > 800) {
+      $(".up").fadeIn();
+    } else {
+      $(".up").fadeOut();
+    }
+  });
+
+  new WOW().init();
 })(jQuery);
